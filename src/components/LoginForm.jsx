@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const Form = () => {
 
@@ -19,7 +20,7 @@ const Form = () => {
   return (
       <div className="bg-white p-6 rounded-lg shadow-lg w-96 flex flex-col justify-center items-center">
         <Logo></Logo>
-        <form action="submit" method="get" className="w-full">
+        <form action="submit" method="get" className="w-full flex flex-col">
           <div className="form-example mb-4">
             <label htmlFor="name" className="block text-gray-700">Entrez votre mail:</label>
             <input type="text" name="name" id="name" required="required" 
@@ -34,9 +35,12 @@ const Form = () => {
                    onChange={handleChangePassword}/>
           </div>
 
-          <button onClick={handleClick} className="w-full h-11 rounded-lg bg-blue-500 text-white">
+          <button onClick={handleClick} className="w-full h-11 rounded-lg bg-blue-500 text-white mb-1">
             S'inscrire
           </button>
+          <Link to="/" className="w-full h-11 rounded-lg bg-green-400 text-white flex justify-center items-center">
+            Deconnexion
+          </Link>
         </form>
       </div>
   );
